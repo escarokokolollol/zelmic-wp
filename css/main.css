@@ -18,10 +18,72 @@ body{
   background: #fafafa;
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* 
+*
+* HEADER
+*
+*/
+
 header#masthead{
+  padding: 20px;
   background: coral;
+}
+.header-inner{
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
 }
 
 header#masthead h1.site-title{
   margin: 0;
+}
+header#masthead h1.site-title a{
+  text-decoration: none;;
+}
+
+header#masthead nav {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+header#masthead nav ul li{
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+
+/* 
+*
+* MAIN
+*
+*/
+
+main.site-main{
+  box-sizing: inherit;
+  max-width: 900px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* 
+*
+* FOOTER
+*
+*/
+
+footer.site-footer{
+  padding: 0 20px;
+  background: coral;
+}
+
+footer.site-footer .site-info{
+  padding: 20px 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
