@@ -142,6 +142,26 @@ function zelmic_widgets_init() {
 add_action( 'widgets_init', 'zelmic_widgets_init' );
 
 /**
+ * Custom post type news
+ */
+function create_custom_post_type() {
+  register_post_type('news',
+      array(
+          'labels'      => array(
+              'name'          => __('News', 'news'),
+              'singular_name' => __('News', 'news'),
+          ),
+              'public'      => true,
+              'show_in_rest' => true,
+              'supports' => array('title', 'editor')
+      )
+  );
+}
+add_action('init', 'create_custom_post_type');
+
+
+
+/**
  * Enqueue scripts and styles.
  */
 function zelmic_scripts() {

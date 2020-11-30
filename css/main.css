@@ -1,3 +1,9 @@
+:root{
+  --backgroundColorLight: #fafafa;
+  --textColorDark: #333;
+  --textColorLight: #fff;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -6,16 +12,13 @@ html {
 *:after {
   box-sizing: inherit;
 }
-a{
-  color: #333;
+p, a, span, div{
+  color: var(--textColorDark);
 }
 
-a:visited{
-  color: #333;
-}
 
 body{
-  background: #fafafa;
+  background: var(--backgroundColorLight);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -43,7 +46,8 @@ header#masthead h1.site-title{
   margin: 0;
 }
 header#masthead h1.site-title a{
-  text-decoration: none;;
+  text-decoration: none;
+  color: var(--textColor);
 }
 
 header#masthead nav {
@@ -52,10 +56,54 @@ header#masthead nav {
   align-items: center;
 }
 
+header#masthead nav button.menu-toggle{
+  z-index: 10;
+}
+
+header#masthead nav.toggled ul#primary-menu {
+  position: absolute;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 127, 79, .8);
+  width: 100vw;
+  height: 100vh;
+}
+
 header#masthead nav ul li{
   margin-left: 10px;
   text-transform: uppercase;
 }
+
+header#masthead nav ul li a{
+  color: var(--textColor);
+}
+
+header#masthead nav ul li a:hover{
+  color: var(--textColorLight);
+}
+
+@media only screen and (max-width: 60px){
+  header#masthead nav button.menu-toggle{
+    /* z-index: 10; */
+  }
+  header#masthead nav .menu-menu-1-container ul{
+    /* background: rgba(255, 127, 79, .8);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left:0;
+    padding: 80px; */
+  }
+  header#masthead nav .menu-menu-1-container ul li{
+    /* margin: 0 au to; */
+  }
+}
+
 
 
 /* 
@@ -69,6 +117,12 @@ main.site-main{
   max-width: 900px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 920px) {
+  main.site-main{
+    padding: 0;
+  }
 }
 
 /* 
