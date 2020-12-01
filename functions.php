@@ -178,6 +178,7 @@ function zelmic_scripts() {
 	wp_enqueue_style( 'startpage', get_template_directory_uri().'/css/startpage.css', array(), _S_VERSION );
 	wp_style_add_data( 'zelmic-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'zelmic-main', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'zelmic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
   
   if ( !is_front_page() && is_home() ) {

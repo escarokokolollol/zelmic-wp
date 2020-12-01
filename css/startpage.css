@@ -3,7 +3,9 @@ body{
 
 /* http://localhost:8888/zelmic/wp-content/uploads/2020/11/zelmic-video.mp4 */
 
-.startpage{}
+.startpage{
+  padding-top: 130px;
+}
 .startpage .hero-container{
   margin-bottom: 40px;
   width: 100%;

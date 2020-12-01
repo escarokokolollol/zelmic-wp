@@ -42,12 +42,22 @@ h1, h2, h3, h4, h5, h6{
 * HEADER
 *
 */
-
+header#masthead.smaller{
+  padding: 10px;
+  transition: padding .3s ease;
+}
 header#masthead{
+  transition: padding .3s ease;
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 7;
+  border-bottom: 6px solid #333;
   padding: 40px 30px;
   /* background: linear-gradient(90deg, rgba(8,76,113,1) 0%, rgba(13,126,151,1) 100%); */
   background: #fafafa;
   color: #333;
+
 }
 .header-inner{
   max-width: 900px;
@@ -181,12 +191,14 @@ main.site-main{
   max-width: 900px;
   padding: 0 20px;
   margin: 0 auto;
+  padding-top: 180px;
 }
 
 @media only screen and (min-width: 920px) {
   main.site-main{
     padding: 0;
-  }
+    padding-top: 160px;
+}
 }
 
 /* 

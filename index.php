@@ -16,6 +16,7 @@ get_header();
 ?>
 
   <div class="outer-wrapper">
+    <!-- class "page" because its not single -->
     <main id="primary" class="site-main page">
 
       <?php
