@@ -1,8 +1,15 @@
 :root{
   --backgroundColorLight: #fafafa;
-  --textColorDark: #333;
-  --textColorLight: #fff;
+  --white: #fff;
+  --darkGrey: #333;
+  --headingFont: 'Poppins', sans-serif;
+  --textFont: Arial, sans-serif;
 }
+
+/*
+*   firstBreakpoint: 600px; 
+*   secondBreakpoint: 920px;
+*/
 
 html {
   box-sizing: border-box;
@@ -14,15 +21,20 @@ html {
 }
 p, a, span, div{
   color: var(--textColorDark);
+  font-family: var(--textFont);
 }
 
 
 body{
   background: var(--backgroundColorLight);
+  margin:0;
+}
+body.page{
+  margin:0;
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--headingFont);
 }
 
 /* 
@@ -32,8 +44,10 @@ h1, h2, h3, h4, h5, h6{
 */
 
 header#masthead{
-  padding: 20px;
-  background: coral;
+  padding: 40px 30px;
+  /* background: linear-gradient(90deg, rgba(8,76,113,1) 0%, rgba(13,126,151,1) 100%); */
+  background: #fafafa;
+  color: #333;
 }
 .header-inner{
   max-width: 900px;
@@ -44,11 +58,21 @@ header#masthead{
 
 header#masthead h1.site-title{
   margin: 0;
+  z-index: 999999999;
+}
+
+@media only screen and ( min-width: 920px){
+  header#masthead h1.site-title{
+    font-size: 48px;
+  }
 }
 header#masthead h1.site-title a{
   text-decoration: none;
-  color: var(--textColor);
+  color: var(--darkGrey);
+  font-family: var(--headingFont);
 }
+
+/* header menu */
 
 header#masthead nav {
   display: flex;
@@ -56,21 +80,29 @@ header#masthead nav {
   align-items: center;
 }
 
-header#masthead nav button.menu-toggle{
+header#masthead nav div#menu-button{
   z-index: 10;
+  width: 30px;
 }
 
-header#masthead nav.toggled ul#primary-menu {
+header#masthead nav div#menu-button:hover{
+  cursor:pointer;
+}
+
+header#masthead nav.toggled .menu-menu-1-container {
   position: absolute;
   top:0;
   left:0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 127, 79, .8);
+  z-index: 5;
+  background: #fff;
   width: 100vw;
   height: 100vh;
+}
+header#masthead nav.toggled .menu-menu-1-container #primary-menu {
+  position: absolute;
+  bottom: 50px;
+  font-size: 38px;
+  left: 30px;
 }
 
 header#masthead nav ul li{
@@ -79,31 +111,63 @@ header#masthead nav ul li{
 }
 
 header#masthead nav ul li a{
-  color: var(--textColor);
+  color: var(--darkGrey);
+  font-family: var(--headingFont);
+  display: inline-block;
+  font-weight: 900;
+  margin-bottom: 10px;
+  background-image: linear-gradient(rgb(176, 251, 188), rgb(176, 251, 188)),
+  linear-gradient(#feb2b2, #feb2b2);
+  background-size: 100% 4px, 0 4px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: all .3s linear;
+}
+
+header#masthead nav ul li a:before{
+  content:"→";
+  position: absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  transition: .3s ease;
 }
 
 header#masthead nav ul li a:hover{
-  color: var(--textColorLight);
+  transition: all .3s linear;
+  padding-left:50px;
+  background-size: 0 4px, 100% 4px;
 }
 
-@media only screen and (max-width: 60px){
-  header#masthead nav button.menu-toggle{
-    /* z-index: 10; */
+header#masthead nav ul li a:hover::before{
+  opacity: 1;
+  transition: 1s ease;
+}
+
+@media only screen and (min-width: 600px){
+  header#masthead nav ul li a{
+    background-size: 100% 2px, 0 2px;
+    font-size: 18px;
   }
-  header#masthead nav .menu-menu-1-container ul{
-    /* background: rgba(255, 127, 79, .8);
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left:0;
-    padding: 80px; */
-  }
-  header#masthead nav .menu-menu-1-container ul li{
-    /* margin: 0 au to; */
+  header#masthead nav ul li a:hover{
+    padding-left: 20px;
+    background-size: 0 2px, 100% 2px;
   }
 }
 
+@media only screen and (min-width: 1200px){
+  header#masthead nav ul li{
+    margin-left:40px;
+  }
+    header#masthead nav ul li a{
+    background-size: 100% 2px, 0 2px;
+    font-size: 18px;
+  }
+  header#masthead nav ul li a:hover{
+    padding-left: 30px;
+    background-size: 0 2px, 100% 2px;
+  }
+}
 
 
 /* 
@@ -132,8 +196,11 @@ main.site-main{
 */
 
 footer.site-footer{
+
+  min-height: 300px;;
   padding: 0 20px;
-  background: coral;
+  background: #ccc;
+  color: var(--darkGrey);
 }
 
 footer.site-footer .site-info{

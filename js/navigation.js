@@ -12,7 +12,7 @@
 		return;
 	}
 
-	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+  const button = siteNavigation.querySelector( 'div#menu-button' );
 
 	// Return early if the button don't exist.
 	if ( 'undefined' === typeof button ) {

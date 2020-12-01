@@ -1,0 +1,95 @@
+body{
+}
+
+/* http://localhost:8888/zelmic/wp-content/uploads/2020/11/zelmic-video.mp4 */
+
+.startpage{}
+.startpage .hero-container{
+  margin-bottom: 40px;
+  width: 100%;
+  height: 60vh;
+}
+
+.startpage .hero-container .hero-text{
+  position: absolute; 
+  z-index: 1;
+  background: rgba(51, 152, 91, 0.3);
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.startpage .hero-container .hero-text h1,
+.startpage .hero-container .hero-text h2,
+.startpage .hero-container .hero-text a{
+  margin:0;
+  text-align:center;
+}
+.startpage .hero-container .hero-text h1{
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  max-width: 350px;
+}
+
+.startpage .hero-container .hero-text h2{
+
+}
+
+.startpage .hero-container .hero-text a{
+  padding: 10px 16px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  transition: all .5s ease;
+  font-size: 18px;
+}
+
+.startpage .hero-container .hero-text a:hover{
+  transition: all .5s ease;
+  background: #fff;
+  color: #555;
+}
+
+.startpage .hero-container .hero-text a:visited{
+}
+
+@media only screen and (min-width: 1200px){
+  .startpage .hero-container .hero-text h2{
+    font-size: 38px;
+  }
+  .startpage .hero-container .hero-text h1{
+    margin: 20px 0 30px;
+    font-size: 60px;
+    line-height: 60px;
+    max-width: 700px;
+  }
+  
+  .startpage .hero-container .hero-text a{
+    font-size: 22px;
+  }
+
+}
+
+.startpage .hero-container video{
+  width: 100%;
+  height: 100%;
+  z-index:-1; /* Causes the video to sit behind your heading */
+  object-position:center; /* Causes video to be centred against the header */
+  object-fit:cover; /* Causes video to cover/stretch to the header */
+}
+
+.startpage .content{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.startpage .content p{
+  font-size: 20px;
+}
+.startpage{}
+.startpage{}
