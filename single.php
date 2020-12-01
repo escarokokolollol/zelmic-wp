@@ -10,7 +10,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+  <!-- class "single" because its not page -->
+	<main id="primary" class="site-main single">
 
 		<?php
 		while ( have_posts() ) :

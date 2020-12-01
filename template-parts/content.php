@@ -22,7 +22,7 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				zelmic_posted_on();
+				zelmic_posted_on(',');
 				zelmic_posted_by();
 				?>
 			</div><!-- .entry-meta -->

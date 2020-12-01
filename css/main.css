@@ -191,6 +191,17 @@ main.site-main{
 
 /* 
 *
+* BLOG
+*
+*/
+
+main.page article.post{
+  min-height: 50vh;
+  margin: 60px 0;
+}
+
+/* 
+*
 * FOOTER
 *
 */

@@ -161,6 +161,13 @@ add_action('init', 'create_custom_post_type');
 
 show_admin_bar(false);
 
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+  global $post;
+return '<br><a class="moretag" href="'. get_permalink($post->ID) . '">Read more...</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 
 /**
  * Enqueue scripts and styles.
@@ -172,6 +179,11 @@ function zelmic_scripts() {
 	wp_style_add_data( 'zelmic-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'zelmic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+  
+  if ( !is_front_page() && is_home() ) {
+    wp_enqueue_script( 'zelmic-blog', get_template_directory_uri() . '/js/blog.js', array(), _S_VERSION, true );
+  // blog page
+  }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
