@@ -15,9 +15,13 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
+      the_post();
+      
+      ?>
+      <h1 class="single-title"><?php the_title(); ?></h1>
+      <?php
+      the_content();
+	    zelmic_post_thumbnail();
 
 			the_post_navigation(
 				array(

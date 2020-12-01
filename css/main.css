@@ -44,10 +44,20 @@ h1, h2, h3, h4, h5, h6{
 */
 header#masthead.smaller{
   padding: 10px;
-  transition: padding .3s ease;
+  transition: all .4s ease;
+  background: #333;
 }
+header#masthead.smaller h1.site-title a{
+  transition: all .4s ease;
+  font-size: 42px;
+}
+header#masthead.smaller h1.site-title a,
+header#masthead.smaller nav ul li a{
+  color: #fff;
+}
+
 header#masthead{
-  transition: padding .3s ease;
+  transition: all .4s ease;
   position: fixed;
   width: 100%;
   top:0;
@@ -60,7 +70,7 @@ header#masthead{
 
 }
 .header-inner{
-  max-width: 900px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
@@ -68,7 +78,6 @@ header#masthead{
 
 header#masthead h1.site-title{
   margin: 0;
-  z-index: 999999999;
 }
 
 @media only screen and ( min-width: 920px){
@@ -188,13 +197,13 @@ header#masthead nav ul li a:hover::before{
 
 main.site-main{
   box-sizing: inherit;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
   padding-top: 180px;
 }
 
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 1220px) {
   main.site-main{
     padding: 0;
     padding-top: 160px;
@@ -207,9 +216,39 @@ main.site-main{
 *
 */
 
+/* page */
 main.page article.post{
-  min-height: 50vh;
-  margin: 60px 0;
+  margin: 10vh 0 40vh;
+  transition: all 2s ease;
+  background: #fafafa;
+  padding: 20px;
+}
+
+main.page article.post.bigger {
+  transition: all 2s ease;
+  /* filter: invert(); */
+  box-shadow: 4px 4px 20px #aaa;
+}
+
+main.page article.post h2.entry-title a{
+  margin:0;
+  color: var(--darkGrey);
+}
+
+main.page article.post .posted-on a,
+main.page article.post .cat-links a {
+  color: var(--darkGrey);
+  text-decoration: none;
+}
+/*  single */
+
+.single h1.single-title{
+}
+
+@media only screen and (min-width: 900px){
+  .single h1.single-title{
+    font-size: 54px;
+  } 
 }
 
 /* 
@@ -228,6 +267,6 @@ footer.site-footer{
 
 footer.site-footer .site-info{
   padding: 20px 0;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
